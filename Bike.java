@@ -6,7 +6,7 @@
  * @since   2022-10-27
  */
  class Bike extends Vehicle {
-   public int cadense = 0;
+   public double cadense = 0;
 
    // constructor
    public Bike(String color, int maxSpeed, int tire) {
@@ -31,5 +31,10 @@
    public void accelerate(int appliedPower) {
      this.cadense = this.cadense + appliedPower;
      this.speedCar = this.cadense * 2;
+   }
+
+   public void Break(int breakPower, int breakTime) {
+     super.Break(breakPower, breakTime);
+     this.cadense = this.speedCar / 2.00;
    }
  }

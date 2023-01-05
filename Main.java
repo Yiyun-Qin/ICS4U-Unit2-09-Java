@@ -21,6 +21,10 @@ public class Main {
     bmx.accelerate(15);
     bmx.status();
 
+    System.out.println("\nBrake by 5 for 5 seconds:");
+    bmx.Break(5, 5);
+    bmx.status();    
+
     System.out.println("\nRing bell.");
     bmx.ringBell();
 
@@ -33,12 +37,12 @@ public class Main {
     bigTruck.accelerate(10, 10);
     System.out.println("New speed: " + bigTruck.speedCar);
 
-    System.out.println("\nBreaking, 10 of power for 10 sec.");
-    bigTruck.accelerate(10, 10);
-    System.out.println("New speed: " + bigTruck.speedCar);
-
     System.out.println("\nApplyed air pressure of 10:");
     bigTruck.applyAir(10);
+    System.out.println("New speed: " + bigTruck.speedCar);
+
+    System.out.println("\nBreaking, 5 of power for 5 sec.");
+    bigTruck.Break(5, 5, 10);
     System.out.println("New speed: " + bigTruck.speedCar);
 
     System.out.println("\nDone.");

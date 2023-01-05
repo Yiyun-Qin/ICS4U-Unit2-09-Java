@@ -23,7 +23,11 @@
    }
  
    // method
-   public void applyAir (int airPressure) {
+   public void applyAir (double airPressure) {
      this.speedCar = this.speedCar - airPressure / 2;
+   }
+
+   public void Break (int breakPower, int breakTime, int airPressure) {
+     this.speedCar = this.speedCar - (breakPower * breakTime) - (airPressure * breakTime);
    }
  }

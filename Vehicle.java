@@ -8,7 +8,7 @@
 
 public class Vehicle {
   public String color;
-  protected int speedCar = 0;
+  protected double speedCar = 0;
   private final int maxinumSpeed;
   private int tireNum;
 
