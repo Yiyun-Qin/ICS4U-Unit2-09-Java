@@ -5,36 +5,80 @@
  * @version 1.0
  * @since   2022-10-27
  */
- class Bike extends Vehicle {
-   public double cadense = 0;
+class Bike extends Vehicle {
+    /**
+    * The variable.
+    */
+    private double cadense;
 
-   // constructor
-   public Bike(String color, int maxSpeed, int tire) {
-     super(color, maxSpeed, tire);
-   }
+    /**
+    * Constructor.
+    *
+    * @param color The color of the bike
+    * @param maxSpeed The max speed the bike can have
+    * @param tire The number of tires
+    */
+    Bike(String color, int maxSpeed, int tire) {
+        super(color, maxSpeed, tire);
+    }
 
-   // getters
+    /**
+    * Getters about the status.
+    */
+    public void status() {
+        double speed = getSpeed();
+        speed = cadense * 2;
+        setSpeed(speed);
+        super.status();
+        System.out.println(" -> Cadense: " + this.cadense);
+    }
 
-   // setters
+    /**
+    * Getters about ringing bell.
+    */
+    public void ringBell() {
+        System.out.println("Ding ding!\n");
+    }
 
-   public void status() {
-     this.speedCar = this.cadense * 2;
-     super.status();
-     System.out.println(" -> Cadense: " + this.cadense);
-   }
+    /**
+     * Getter for cadense.
+     *
+     * @return The cadense.
+     */
+    public double getCadense() {
+        return this.cadense;
+    }
 
-   public void ringBell() {
-     System.out.println("Ding ding!\n");
-   }
+    /**
+     * Setter for cadense.
+     *
+     * @param cadense Set the cadense.
+     */
+    public void setCadense(double cadense) {
+        this.cadense = cadense;
+    }
 
-   // method
-   public void accelerate(int appliedPower) {
-     this.cadense = this.cadense + appliedPower;
-     this.speedCar = this.cadense * 2;
-   }
+    /**
+    * Method about changing the speed.
+    *
+    * @param appliedPower The power the bicycle gets
+    */
+    public void accelerate(int appliedPower) {
+        double speed = getSpeed();
+        this.cadense = this.cadense + appliedPower;
+        speed = this.cadense * 2;
+        setSpeed(speed);
+    }
 
-   public void Break(int breakPower, int breakTime) {
-     super.Break(breakPower, breakTime);
-     this.cadense = this.speedCar / 2.00;
-   }
- }
+    /**
+     * Breaking method.
+     *
+     * @param breakPower The power.
+     * @param breakTime The time.
+     */
+    public void carBreak(int breakPower, int breakTime) {
+        final double speed = getSpeed();
+        super.carBreak(breakPower, breakTime);
+        this.cadense = speed / 2.00;
+    }
+}
